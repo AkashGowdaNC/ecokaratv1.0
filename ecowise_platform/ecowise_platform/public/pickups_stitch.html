@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EcoKarat - My Pickups</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-tint": "#4edea3",
+                    "primary-container": "#10b981",
+                    "surface": "#101410",
+                    "on-secondary-fixed": "#002114",
+                    "inverse-on-surface": "#2d312c",
+                    "on-primary": "#003824",
+                    "surface-container-highest": "#323631",
+                    "surface-variant": "#323631",
+                    "secondary-fixed-dim": "#68dba9",
+                    "on-secondary-fixed-variant": "#005137",
+                    "on-surface-variant": "#bbcabf",
+                    "on-tertiary": "#650911",
+                    "on-surface": "#e0e4dc",
+                    "on-error-container": "#ffdad6",
+                    "surface-dim": "#101410",
+                    "secondary-fixed": "#85f8c4",
+                    "on-tertiary-fixed": "#410005",
+                    "on-tertiary-container": "#711419",
+                    "tertiary-fixed-dim": "#ffb3af",
+                    "surface-container": "#1d211c",
+                    "on-secondary-container": "#00311f",
+                    "error-container": "#93000a",
+                    "inverse-primary": "#006c49",
+                    "tertiary-container": "#fc7c78",
+                    "secondary": "#68dba9",
+                    "tertiary-fixed": "#ffdad7",
+                    "tertiary": "#ffb3af",
+                    "outline-variant": "#3c4a42",
+                    "inverse-surface": "#e0e4dc",
+                    "on-background": "#e0e4dc",
+                    "on-primary-fixed": "#002113",
+                    "surface-container-low": "#191d18",
+                    "primary": "#4edea3",
+                    "surface-bright": "#363a35",
+                    "secondary-container": "#25a475",
+                    "outline": "#86948a",
+                    "on-error": "#690005",
+                    "primary-fixed-dim": "#4edea3",
+                    "error": "#ffb4ab",
+                    "surface-container-high": "#272b26",
+                    "primary-fixed": "#6ffbbe",
+                    "on-secondary": "#003825",
+                    "on-primary-fixed-variant": "#005236",
+                    "on-tertiary-fixed-variant": "#842225",
+                    "surface-container-lowest": "#0b0f0b",
+                    "on-primary-container": "#00422b",
+                    "background": "#101410"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Space Grotesk", "sans-serif"],
+                    "display": ["Space Grotesk", "sans-serif"],
+                    "body": ["Manrope", "sans-serif"],
+                    "label": ["Space Grotesk", "sans-serif"]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; background-color: #0b0f0b; color: #e0e4dc; }
+        h1, h2, h3, h4, h5, h6, .font-display, .font-headline { font-family: 'Space Grotesk', sans-serif; }
+        .glass-panel { background: rgba(54, 58, 53, 0.2); backdrop-filter: blur(20px); border: 1px solid rgba(60, 74, 66, 0.15); }
+        .glass-modal { background: rgba(29, 33, 28, 0.6); backdrop-filter: blur(40px); border: 1px solid rgba(60, 74, 66, 0.2); box-shadow: 0 20px 40px rgba(16, 185, 129, 0.05); }
+        .glow-button { background: linear-gradient(135deg, #4edea3, #10b981); transition: all 0.3s ease; }
+        .glow-button:hover { box-shadow: 0 0 20px rgba(78, 222, 163, 0.4); transform: translateY(-1px); }
+        .ghost-input { background: transparent; border: none; border-bottom: 1px solid #3c4a42; color: #e0e4dc; transition: all 0.3s ease; border-radius: 0; padding-left: 0; padding-right: 0; }
+        .ghost-input:focus { outline: none; border-bottom: 2px solid #4edea3; box-shadow: none; }
+        .ghost-input:focus-within { background: radial-gradient(circle at bottom, rgba(78, 222, 163, 0.1) 0%, transparent 70%); }
+    </style>
+</head>
+<body class="bg-surface-container-lowest text-on-surface flex min-h-screen overflow-hidden">
+<!-- SideNavBar Component -->
+<nav class="bg-[#191d18] h-screen w-64 fixed left-0 top-0 z-50 shadow-[10px_0_40px_rgba(0,0,0,0.3)] flex flex-col py-8 px-4 border-r border-emerald-900/10">
+<div class="mb-10 px-4">
+<h1 class="font-['Space_Grotesk'] text-xl font-bold text-[#4edea3] tracking-tighter">EcoKarat</h1>
+<p class="text-on-surface-variant text-xs mt-1 font-body uppercase tracking-widest opacity-70">Living Laboratory</p>
+</div>
+<div class="flex-1 space-y-2">
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-[#e0e4dc]/60 hover:bg-emerald-900/20 hover:text-[#e0e4dc] transition-all duration-300 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">grid_view</span>
+<span class="font-label font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-[#4edea3] font-bold border-r-4 border-[#4edea3] bg-emerald-900/10 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">local_shipping</span>
+<span class="font-label">My Pickups</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-[#e0e4dc]/60 hover:bg-emerald-900/20 hover:text-[#e0e4dc] transition-all duration-300 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">insights</span>
+<span class="font-label font-medium">Analytics</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-[#e0e4dc]/60 hover:bg-emerald-900/20 hover:text-[#e0e4dc] transition-all duration-300 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">public</span>
+<span class="font-label font-medium">Impact Map</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-[#e0e4dc]/60 hover:bg-emerald-900/20 hover:text-[#e0e4dc] transition-all duration-300 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-label font-medium">Community</span>
+</a>
+</div>
+<div class="mt-auto space-y-4 pt-8">
+<button class="w-full py-3 px-4 rounded-xl font-label text-on-primary font-bold text-sm glow-button">
+                Schedule New Pickup
+            </button>
+<div class="space-y-1">
+<a class="flex items-center gap-4 px-4 py-2 rounded-lg text-[#e0e4dc]/60 hover:bg-emerald-900/20 hover:text-[#e0e4dc] transition-all duration-300 text-sm" href="#">
+<span class="material-symbols-outlined text-sm">help_outline</span>
+<span class="font-body">Support</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-2 rounded-lg text-[#e0e4dc]/60 hover:bg-emerald-900/20 hover:text-[#e0e4dc] transition-all duration-300 text-sm" href="#">
+<span class="material-symbols-outlined text-sm">person</span>
+<span class="font-body">Account</span>
+</a>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas (Blurred Background) -->
+<main class="ml-64 flex-1 h-screen relative bg-surface-container-lowest">
+<!-- Background Layer: The "Existing Data" (Blurred) -->
+<div class="absolute inset-0 p-8 pt-12 overflow-hidden blur-[8px] opacity-60 pointer-events-none transition-all duration-500">
+<header class="mb-10 flex justify-between items-end">
+<div>
+<h2 class="font-display text-4xl text-on-surface tracking-tight mb-2">My Pickups</h2>
+<p class="font-body text-on-surface-variant">Active deployments and historical logs.</p>
+</div>
+</header>
+<div class="bg-surface rounded-2xl p-1 border border-outline-variant/10">
+<div class="flex flex-col gap-2">
+<!-- Table Header equivalent -->
+<div class="grid grid-cols-12 gap-4 px-6 py-4 text-xs font-label text-on-surface-variant uppercase tracking-wider border-b border-surface-container-low">
+<div class="col-span-4">Event</div>
+<div class="col-span-3">Date</div>
+<div class="col-span-2">Volume</div>
+<div class="col-span-3 text-right">Status</div>
+</div>
+<!-- Row 1 -->
+<div class="grid grid-cols-12 gap-4 px-6 py-5 items-center bg-surface-container-low/50 rounded-xl">
+<div class="col-span-4 font-body font-medium">Sharma Wedding</div>
+<div class="col-span-3 text-on-surface-variant text-sm">Oct 24, 2023</div>
+<div class="col-span-2 text-sm">120 kg</div>
+<div class="col-span-3 flex justify-end">
+<span class="px-3 py-1 text-xs rounded-full bg-primary/10 text-primary font-medium flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span> Completed
+                            </span>
+</div>
+</div>
+<!-- Row 2 -->
+<div class="grid grid-cols-12 gap-4 px-6 py-5 items-center bg-surface-container-low/50 rounded-xl">
+<div class="col-span-4 font-body font-medium">Reddy Reception</div>
+<div class="col-span-3 text-on-surface-variant text-sm">Nov 02, 2023</div>
+<div class="col-span-2 text-sm">85 kg</div>
+<div class="col-span-3 flex justify-end">
+<span class="px-3 py-1 text-xs rounded-full bg-amber-500/10 text-amber-400 font-medium flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span> Assigned
+                            </span>
+</div>
+</div>
+<!-- Row 3 -->
+<div class="grid grid-cols-12 gap-4 px-6 py-5 items-center bg-surface-container-low/50 rounded-xl">
+<div class="col-span-4 font-body font-medium">Kumar Birthday</div>
+<div class="col-span-3 text-on-surface-variant text-sm">Nov 15, 2023</div>
+<div class="col-span-2 text-sm">40 kg</div>
+<div class="col-span-3 flex justify-end">
+<span class="px-3 py-1 text-xs rounded-full bg-blue-500/10 text-blue-400 font-medium flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span> Scheduled
+                            </span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Foreground Overlay (Dark tint to push background further back) -->
+<div class="absolute inset-0 bg-surface-container-lowest/40 z-10"></div>
+<!-- Modal Container (Centered) -->
+<div class="absolute inset-0 z-20 flex items-center justify-center p-4">
+<div class="glass-modal w-full max-w-2xl rounded-[1.5rem] overflow-hidden flex flex-col max-h-[921px]">
+<!-- Modal Header -->
+<div class="px-8 py-6 border-b border-outline-variant/20 flex justify-between items-center bg-surface-container-low/30">
+<h2 class="font-display text-2xl text-on-surface tracking-tight">Schedule New Pickup</h2>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<!-- Modal Body -->
+<div class="p-8 overflow-y-auto custom-scrollbar flex flex-col gap-8">
+<!-- Form Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Event Name -->
+<div class="col-span-1 md:col-span-2 relative group">
+<label class="block text-xs font-label text-on-surface-variant mb-1 uppercase tracking-wider">Event Name</label>
+<input class="w-full ghost-input py-2 text-lg font-body" placeholder="e.g. Annual Tech Conference 2024" type="text"/>
+</div>
+<!-- Date -->
+<div class="col-span-1 relative">
+<label class="block text-xs font-label text-on-surface-variant mb-1 uppercase tracking-wider">Pickup Date</label>
+<div class="flex items-center relative">
+<input class="w-full ghost-input py-2 font-body text-on-surface bg-transparent" style="color-scheme: dark;" type="date" value="2023-11-20"/>
+</div>
+</div>
+<!-- Volume & Cost -->
+<div class="col-span-1 relative">
+<label class="block text-xs font-label text-on-surface-variant mb-1 uppercase tracking-wider">Estimated Plastic (kg)</label>
+<div class="relative">
+<input class="w-full ghost-input py-2 font-body text-on-surface" placeholder="150" type="number" value="150"/>
+<!-- Cost Calculator Pill -->
+<div class="absolute right-0 bottom-2 bg-primary/10 border border-primary/20 px-3 py-1 rounded-full flex items-center gap-2">
+<span class="material-symbols-outlined text-[14px] text-primary">calculate</span>
+<span class="text-xs font-label text-primary font-medium tracking-wide">₹2/kg × 150kg = ₹300</span>
+</div>
+</div>
+</div>
+<!-- Location Divider -->
+<div class="col-span-1 md:col-span-2 pt-4">
+<h3 class="font-display text-sm text-on-surface-variant border-b border-outline-variant/20 pb-2 mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">location_on</span> Location Details
+                            </h3>
+</div>
+<!-- Address -->
+<div class="col-span-1 md:col-span-2 relative group">
+<label class="block text-xs font-label text-on-surface-variant mb-1 uppercase tracking-wider">Street Address / Venue</label>
+<input class="w-full ghost-input py-2 font-body" placeholder="123 Eco Blvd, Green Tech Park" type="text"/>
+</div>
+<!-- District -->
+<div class="col-span-1 md:col-span-2 relative group">
+<label class="block text-xs font-label text-on-surface-variant mb-1 uppercase tracking-wider">District / Zone</label>
+<select class="w-full ghost-input py-2 font-body text-on-surface appearance-none bg-transparent focus:ring-0">
+<option disabled="" value="">Select a zone...</option>
+<option class="bg-surface" selected="" value="north">North Sector - Delta</option>
+<option class="bg-surface" value="south">South Sector - Omega</option>
+</select>
+<span class="material-symbols-outlined absolute right-0 bottom-3 text-on-surface-variant pointer-events-none">expand_more</span>
+</div>
+<!-- Notes Divider -->
+<div class="col-span-1 md:col-span-2 pt-4">
+<h3 class="font-display text-sm text-on-surface-variant border-b border-outline-variant/20 pb-2 mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">notes</span> Operational Notes
+                            </h3>
+</div>
+<!-- Notes Area -->
+<div class="col-span-1 md:col-span-2 relative group">
+<textarea class="w-full ghost-input py-2 font-body resize-none min-h-[80px]" placeholder="Access codes, loading dock details, specific sorting requirements..."></textarea>
+</div>
+</div>
+</div>
+<!-- Modal Footer -->
+<div class="px-8 py-6 border-t border-outline-variant/20 bg-surface-container-highest/30 flex justify-end gap-4 items-center">
+<button class="px-6 py-3 rounded-xl font-label text-on-surface font-medium text-sm glass-panel hover:bg-surface-bright/30 transition-all duration-300">
+                        Cancel
+                    </button>
+<button class="px-8 py-3 rounded-xl font-label text-on-primary font-bold text-sm glow-button flex items-center gap-2 shadow-[0_0_20px_rgba(78,222,163,0.15)]">
+                        Schedule Pickup
+                        <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+</body></html>

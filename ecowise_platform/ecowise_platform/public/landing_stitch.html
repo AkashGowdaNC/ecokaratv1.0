@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EcoKarat Platform</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Space+Grotesk:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "background": "#101410",
+                    "surface-bright": "#363a35",
+                    "error-container": "#93000a",
+                    "tertiary-fixed": "#ffdad7",
+                    "secondary-fixed": "#85f8c4",
+                    "on-primary-fixed-variant": "#005236",
+                    "on-error-container": "#ffdad6",
+                    "tertiary": "#ffb3af",
+                    "surface-container-low": "#191d18",
+                    "tertiary-container": "#fc7c78",
+                    "outline": "#86948a",
+                    "on-secondary-fixed": "#002114",
+                    "on-secondary-container": "#00311f",
+                    "on-primary-fixed": "#002113",
+                    "on-tertiary-fixed-variant": "#842225",
+                    "on-secondary-fixed-variant": "#005137",
+                    "on-surface": "#e0e4dc",
+                    "surface-container-lowest": "#0b0f0b",
+                    "secondary-container": "#25a475",
+                    "tertiary-fixed-dim": "#ffb3af",
+                    "primary-fixed-dim": "#4edea3",
+                    "secondary-fixed-dim": "#68dba9",
+                    "surface-tint": "#4edea3",
+                    "secondary": "#68dba9",
+                    "error": "#ffb4ab",
+                    "primary-container": "#10b981",
+                    "surface-container": "#1d211c",
+                    "surface-dim": "#101410",
+                    "on-tertiary": "#650911",
+                    "on-primary": "#003824",
+                    "surface-variant": "#323631",
+                    "outline-variant": "#3c4a42",
+                    "inverse-primary": "#006c49",
+                    "primary-fixed": "#6ffbbe",
+                    "on-background": "#e0e4dc",
+                    "surface": "#101410",
+                    "surface-container-high": "#272b26",
+                    "on-surface-variant": "#bbcabf",
+                    "on-secondary": "#003825",
+                    "primary": "#4edea3",
+                    "inverse-on-surface": "#2d312c",
+                    "on-primary-container": "#00422b",
+                    "on-tertiary-container": "#711419",
+                    "surface-container-highest": "#323631",
+                    "inverse-surface": "#e0e4dc",
+                    "on-error": "#690005",
+                    "on-tertiary-fixed": "#410005"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Space Grotesk", "sans-serif"],
+                    "display": ["Space Grotesk", "sans-serif"],
+                    "body": ["Manrope", "sans-serif"],
+                    "label": ["Space Grotesk", "sans-serif"]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        body {
+            background-color: #050805;
+            background-image: radial-gradient(circle at 15% 50%, rgba(16, 185, 129, 0.05), transparent 25%),
+                              radial-gradient(circle at 85% 30%, rgba(78, 222, 163, 0.05), transparent 25%);
+        }
+    </style>
+</head>
+<body class="text-on-surface font-body antialiased min-h-screen flex flex-col relative overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#101410]/20 backdrop-blur-2xl bg-gradient-to-b from-[#101410]/40 to-transparent shadow-[0_0_40px_rgba(16,185,129,0.05)]">
+<div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto font-['Space_Grotesk'] tracking-tight">
+<div class="text-2xl font-bold tracking-tighter text-[#4edea3]">
+                EcoKarat
+            </div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-[#4edea3] border-b-2 border-[#4edea3] pb-1 perspective-1000 hover:rotate-x-2 transition-all duration-300" href="#">Platform</a>
+<a class="text-[#e0e4dc]/70 hover:text-[#e0e4dc] transition-colors hover:scale-105 hover:shadow-[0_0_20px_rgba(16,185,129,0.3)] duration-300" href="#">Solutions</a>
+<a class="text-[#e0e4dc]/70 hover:text-[#e0e4dc] transition-colors hover:scale-105 hover:shadow-[0_0_20px_rgba(16,185,129,0.3)] duration-300" href="#">Ecosystem</a>
+<a class="text-[#e0e4dc]/70 hover:text-[#e0e4dc] transition-colors hover:scale-105 hover:shadow-[0_0_20px_rgba(16,185,129,0.3)] duration-300" href="#">Analytics</a>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#4edea3] hover:scale-105 transition-transform cursor-pointer" data-icon="language">language</span>
+<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary font-headline font-semibold px-6 py-2.5 rounded-xl hover:shadow-[0_0_20px_rgba(78,222,163,0.5)] transition-all duration-300">
+                    Get Started
+                </button>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-32 pb-24 relative z-10">
+<!-- Hero Section -->
+<section class="max-w-7xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center min-h-[716px]">
+<div class="lg:col-span-6 space-y-8">
+<h1 class="font-display text-5xl lg:text-7xl font-extrabold tracking-tighter leading-[1.1]">
+                    Turn Post-Event <br/>
+<span class="bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary-container">Plastic Into Value</span>
+</h1>
+<p class="font-body text-lg text-on-surface-variant max-w-xl leading-relaxed">
+                    A synthetic ecosystem connecting marriage halls directly with certified recyclers. We transform waste logistics into a transparent, high-value asset class.
+                </p>
+<div class="flex flex-wrap gap-4 pt-4">
+<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary font-headline font-bold px-8 py-4 rounded-xl text-lg hover:shadow-[0_0_30px_rgba(78,222,163,0.6)] hover:-translate-y-1 transition-all duration-300">
+                        Join the Network
+                    </button>
+<button class="bg-surface-bright/10 backdrop-blur-md border border-outline-variant/15 text-on-surface font-headline font-semibold px-8 py-4 rounded-xl text-lg hover:bg-surface-bright/20 transition-all duration-300">
+                        Explore Analytics
+                    </button>
+</div>
+</div>
+<div class="lg:col-span-6 relative perspective-1000">
+<!-- Glassmorphism Flow Card -->
+<div class="bg-surface-bright/10 backdrop-blur-[20px] border border-outline-variant/15 rounded-[1.5rem] p-8 shadow-[0_20px_40px_rgba(0,0,0,0.5)] transform rotate-y-[-5deg] rotate-x-[2deg] transition-transform duration-500 hover:rotate-y-0 hover:rotate-x-0">
+<h3 class="font-headline text-xl text-primary mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="sync" data-weight="fill">sync</span>
+                        Platform Flow
+                    </h3>
+<div class="space-y-6">
+<!-- Step 1 -->
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface font-headline font-bold shrink-0 shadow-[0_0_15px_rgba(78,222,163,0.1)] border border-outline-variant/15">1</div>
+<div>
+<h4 class="font-headline text-lg font-semibold text-on-surface">Hall Books Pickup</h4>
+<p class="text-sm text-on-surface-variant font-body">Automated request logged into the regional ledger.</p>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface font-headline font-bold shrink-0 border border-outline-variant/15">2</div>
+<div>
+<h4 class="font-headline text-lg font-semibold text-on-surface">Recycler Assigned</h4>
+<p class="text-sm text-on-surface-variant font-body">Nearest verified partner selected via proximity algorithms.</p>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface font-headline font-bold shrink-0 border border-outline-variant/15">3</div>
+<div>
+<h4 class="font-headline text-lg font-semibold text-on-surface">Plastic Collected</h4>
+<p class="text-sm text-on-surface-variant font-body">Weight verified on-site, digital transaction initiated.</p>
+</div>
+</div>
+<!-- Step 4 -->
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary font-headline font-bold shrink-0 shadow-[0_0_20px_rgba(78,222,163,0.4)]">4</div>
+<div>
+<h4 class="font-headline text-lg font-semibold text-primary">Certificate Issued</h4>
+<p class="text-sm text-on-surface-variant font-body">Immutable impact certificate generated for compliance.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Decorative ambient glow -->
+<div class="absolute -inset-4 bg-primary/10 blur-[60px] -z-10 rounded-full pointer-events-none"></div>
+</div>
+</section>
+<!-- Stats Row -->
+<section class="max-w-5xl mx-auto px-8 mt-24">
+<div class="bg-surface-container/50 backdrop-blur-md rounded-2xl border border-outline-variant/10 p-8 flex flex-col md:flex-row justify-around items-center gap-8 divide-y md:divide-y-0 md:divide-x divide-outline-variant/20">
+<div class="text-center px-8 w-full">
+<div class="font-display text-4xl font-bold text-primary tracking-tight mb-1">143</div>
+<div class="font-headline text-sm text-on-surface-variant uppercase tracking-widest">Active Recyclers</div>
+</div>
+<div class="text-center px-8 w-full pt-8 md:pt-0">
+<div class="font-display text-4xl font-bold text-primary tracking-tight mb-1">237</div>
+<div class="font-headline text-sm text-on-surface-variant uppercase tracking-widest">Taluks Covered</div>
+</div>
+<div class="text-center px-8 w-full pt-8 md:pt-0">
+<div class="font-display text-4xl font-bold text-primary tracking-tight mb-1">₹7/kg</div>
+<div class="font-headline text-sm text-on-surface-variant uppercase tracking-widest">Base Rate</div>
+</div>
+</div>
+</section>
+<!-- Who Uses EcoKarat -->
+<section class="max-w-7xl mx-auto px-8 mt-32">
+<div class="mb-12">
+<h2 class="font-display text-3xl lg:text-4xl font-bold text-on-surface tracking-tight mb-4">Ecosystem Nodes</h2>
+<p class="font-body text-on-surface-variant max-w-2xl">Our decentralized network optimizes the flow of recyclable materials from generation to reconstitution.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<div class="bg-surface-container hover:bg-surface-container-high transition-all duration-300 rounded-[1rem] p-8 border border-outline-variant/10 hover:border-primary/30 hover:shadow-[0_10px_40px_rgba(16,185,129,0.1)] group perspective-1000">
+<div class="w-14 h-14 rounded-full bg-surface-container-low flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl" data-icon="stadium">stadium</span>
+</div>
+<h3 class="font-headline text-xl font-bold text-on-surface mb-3">Marriage Halls</h3>
+<p class="font-body text-on-surface-variant text-sm leading-relaxed">
+                        Generate revenue from post-event waste while securing verifiable environmental impact certificates for regulatory compliance.
+                    </p>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container hover:bg-surface-container-high transition-all duration-300 rounded-[1rem] p-8 border border-outline-variant/10 hover:border-primary/30 hover:shadow-[0_10px_40px_rgba(16,185,129,0.1)] group perspective-1000 transform md:-translate-y-4">
+<div class="w-14 h-14 rounded-full bg-surface-container-low flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl" data-icon="factory">factory</span>
+</div>
+<h3 class="font-headline text-xl font-bold text-on-surface mb-3">Recycling Centres</h3>
+<p class="font-body text-on-surface-variant text-sm leading-relaxed">
+                        Access a steady, localized supply of sorted plastic waste, eliminating middlemen and optimizing logistic routes.
+                    </p>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container hover:bg-surface-container-high transition-all duration-300 rounded-[1rem] p-8 border border-outline-variant/10 hover:border-primary/30 hover:shadow-[0_10px_40px_rgba(16,185,129,0.1)] group perspective-1000">
+<div class="w-14 h-14 rounded-full bg-surface-container-low flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl" data-icon="water_drop">water_drop</span>
+</div>
+<h3 class="font-headline text-xl font-bold text-on-surface mb-3">Manufacturers</h3>
+<p class="font-body text-on-surface-variant text-sm leading-relaxed">
+                        Procure high-quality, processed PET flakes directly from the ecosystem, ensuring a sustainable supply chain for new products.
+                    </p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 px-8 border-t border-[#1d211c] bg-[#0b0f0b]">
+<div class="flex flex-col md:flex-row justify-between items-center gap-8 max-w-7xl mx-auto">
+<div class="text-[#4edea3] font-bold font-['Space_Grotesk'] text-xl tracking-tighter">
+                EcoKarat
+            </div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="font-['Manrope'] text-sm uppercase tracking-widest text-[#e0e4dc]/50 hover:text-[#4edea3] transition-colors" href="#">Privacy Protocol</a>
+<a class="font-['Manrope'] text-sm uppercase tracking-widest text-[#e0e4dc]/50 hover:text-[#4edea3] transition-colors" href="#">Terms of Service</a>
+<a class="font-['Manrope'] text-sm uppercase tracking-widest text-[#e0e4dc]/50 hover:text-[#4edea3] transition-colors" href="#">Environmental Impact</a>
+<a class="font-['Manrope'] text-sm uppercase tracking-widest text-[#e0e4dc]/50 hover:text-[#4edea3] transition-colors" href="#">Contact Lab</a>
+</div>
+<div class="font-['Manrope'] text-sm uppercase tracking-widest text-[#e0e4dc]/50">
+                © 2024 EcoKarat Synthetic Ecosystems. All rights reserved.
+            </div>
+</div>
+</footer>
+</body></html>
