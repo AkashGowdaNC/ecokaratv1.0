@@ -41,6 +41,8 @@ POST /api/login — login
 POST /api/pickups — schedule pickup
 GET  /api/pickups — get pickups
 PATCH /api/pickups/:id/assign — recycler accepts
+GET  /api/pickups — get pickups
+
 PATCH /api/pickups/:id/complete — mark complete
 POST /api/reports — submit monthly report
 GET  /api/notifications — get notifications
