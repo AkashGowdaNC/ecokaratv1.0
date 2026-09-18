@@ -48,3 +48,5 @@ POST /api/reports — submit monthly report
 GET  /api/notifications — get notifications
 GET  /api/admin/stats — admin stats
 POST /api/seed — seed demo data
+Loggin details
+
